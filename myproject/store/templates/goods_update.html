@@ -1,0 +1,7 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+<!--    <button onclick="window.location.href='{% url 'goods_detail' goods.pk%}'">Cancel</button>-->
+</form>
+

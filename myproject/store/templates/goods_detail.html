@@ -1,0 +1,23 @@
+<ul>
+    <li>
+        <p>Tittle: {{ goods.title }}</p>
+        <p>Description: {{ goods.description }}</p>
+        {% if goods.image %}
+            <p><img src="{{ goods.image.url }}" alt="{{ goods.tittle }}"></p>
+        {% endif %}
+
+        <p>Price: {{ goods.price }}</p>
+        <p>Category: {{ goods.category }}</p>
+        <p>Date: {{ goods.date }}</p>
+    </li>
+<h2>Comments:</h2>
+    <li>
+        {% for feedback in feedback_list %}
+        <p>Author: {{ feedback.author }}</p>
+        <p>Text: {{ feedback.text }}</p>
+        <p>Date: {{ feedback.date }}</p>
+        {% endfor %}
+    </li>
+</ul>
+<button onclick="window.location.href='{% url 'goods_update' goods.pk%}'">Update</button>
+<button onclick="window.location.href='{% url 'goods_list'%}'">Cancel</button>
